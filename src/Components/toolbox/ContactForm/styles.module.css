@@ -1,0 +1,5 @@
+.textArea{
+height:120px !important;
+resize: none;
+overflow-y: auto;
+}
