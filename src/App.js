@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import Header from './Components/Header';
+import UserDetail from './Views/UserDetail';
 import { language } from './Language';
 import { IntlProvider } from 'react-intl';
 import LanguageContext from './Context/LanguageContext';
@@ -8,6 +9,7 @@ import Home from './Views/Home';
 import Contact from './Views/Contact';
 import ThemeContext from './Context/ThemeContext';
 import styles from './App.module.css';
+import Footer from './Components/Footer';
 function App() {
 	const { lang } = useContext(LanguageContext);
 	const { theme } = useContext(ThemeContext);
@@ -20,8 +22,17 @@ function App() {
 					<Switch>
 						<Route path="/" exact component={Home} />
 						<Route path="/contact-us" component={Contact} />
+						<Route path="/user-detail" component={UserDetail} />
+						<Route
+						path="/"
+						component={() => {
+							window.open('https://github.com/aaliakinci', '_blank');
+							return null;
+						}}
+					/>
 					</Switch>
 				</div>
+				<Footer />
 			</div>
 		</IntlProvider>
 	);

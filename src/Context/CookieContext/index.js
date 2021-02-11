@@ -19,7 +19,7 @@ export const CookieProvider = ({children}) => {
 		return calledcookie;
 	}
 	useEffect(() => {
-		setUserCookie(cookie.getJSON('realtimecolor'));
+		setUserCookie(cookie.getJSON('UserBasicReact'));
 	}, [])
 	const setCookie = (name,value,expiredTime) => {
 	 cookie.set(name,value,{expires:expiredTime});

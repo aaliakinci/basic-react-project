@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useContext} from 'react';
+import ThemeContext from '../../Context/ThemeContext';
 import styles from './styles.module.css';
 function SearchBar({ setSelectedCountry, data }) {
 	const [search, setSearch] = useState('');
 	const [filterCountry, setFilterCountry] = useState([]);
+	const {theme} = useContext(ThemeContext);
 	useEffect(() => {
 		const fetchData = async () => {
 			setFilterCountry(
@@ -15,6 +17,7 @@ function SearchBar({ setSelectedCountry, data }) {
 		if (filterCountry.length > 0) {
 			if (filterCountry.length < 2 && search === filterCountry[0].name) {
 				setSelectedCountry(filterCountry[0].id);
+				setFilterCountry([]);
 			}
 		}
 	}, [search]);
@@ -33,7 +36,7 @@ function SearchBar({ setSelectedCountry, data }) {
 				<ul id="countrys" className="list-group list-group-flush">
 					{filterCountry.map((country) => (
 						<li
-							className={`list-group-item ${styles.listItem}`}
+							className={`list-group-item ${theme==="light"?"":"text-white bg-transparent border border-top-0 border-left-0 border right-0"} ${styles.listItem}`}
 							onClick={()=>handleClick(country)}
 							key={country.id}
 						>

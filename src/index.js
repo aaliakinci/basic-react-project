@@ -7,14 +7,20 @@ import { ThemeProvider } from './Context/ThemeContext';
 import { CookieProvider } from './Context/CookieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { LanguageProvider } from './Context/LanguageContext';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { PageProvider } from './Context/PageContext';
+import { ValidationProvider } from './Context/Validation';
 ReactDOM.render(
 	<React.Fragment>
 		<BrowserRouter>
 			<CookieProvider>
 				<ThemeProvider>
 					<LanguageProvider>
-						<App />
+						<PageProvider>
+							<ValidationProvider>
+								<App />
+							</ValidationProvider>
+						</PageProvider>
 					</LanguageProvider>
 				</ThemeProvider>
 			</CookieProvider>
