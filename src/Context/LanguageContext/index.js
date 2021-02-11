@@ -16,7 +16,7 @@ useEffect(() => {
 		const locallang = localStorage.getItem('lang');
 		setLang(locallang);
 	}
-}, [])
+}, [isLocal])
 	
 
 	const localChange = (changeLang) => {
