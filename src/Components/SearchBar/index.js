@@ -1,7 +1,7 @@
 import { useState, useEffect,useContext} from 'react';
 import ThemeContext from '../../Context/ThemeContext';
 import styles from './styles.module.css';
-function SearchBar({ setSelectedCountry, data }) {
+function SearchBar({ setSelectedCountry, data,setData,contactData}) {
 	const [search, setSearch] = useState('');
 	const [filterCountry, setFilterCountry] = useState([]);
 	const {theme} = useContext(ThemeContext);
@@ -27,11 +27,14 @@ function SearchBar({ setSelectedCountry, data }) {
 
  const handleClick = (country) => {
 	setSelectedCountry(country.id)
+	setData({...contactData,country:country.id})
+	const search = document.getElementById('search');
+	search.value=country.name
 	setFilterCountry([]);
  }
 	return (
 		<div className="form-group">
-			<input className="form-control" onChange={handleChange} />
+			<input id="search" className="form-control"  onChange={handleChange} />
 			{filterCountry.length < 200 ? (
 				<ul id="countrys" className="list-group list-group-flush">
 					{filterCountry.map((country) => (
