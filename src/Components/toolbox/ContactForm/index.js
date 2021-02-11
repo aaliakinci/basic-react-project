@@ -39,7 +39,7 @@ function ContactForm() {
 		) {
 			setData(data);
 			console.log(data);
-	 
+			console.log(country);
 			return 0;
 		}
 		setError(<FormattedMessage id="contact.error" />);

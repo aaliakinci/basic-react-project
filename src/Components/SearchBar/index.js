@@ -20,7 +20,7 @@ function SearchBar({ setSelectedCountry, data,setData,contactData}) {
 				setFilterCountry([]);
 			}
 		}
-	}, [search]);
+	}, [search,data,setSelectedCountry]);
 	const handleChange = (e) => {
 		setSearch(e.target.value);
 	};
