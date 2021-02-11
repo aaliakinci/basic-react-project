@@ -110,7 +110,7 @@ function Header() {
 				</ModalBody>
 				<ModalFooter className={`${theme === 'light' ? '' : `${styles.dark}`}`}>
 					<Button color="secondary" onClick={toggleModal}>
-						Cancel
+						<FormattedMessage id="modal.cancel"/>
 					</Button>
 				</ModalFooter>
 			</Modal>
