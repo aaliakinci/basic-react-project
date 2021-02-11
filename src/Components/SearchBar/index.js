@@ -24,7 +24,7 @@ function SearchBar({ setSelectedCountry, data, setData, contactData }) {
 			}
 		}
 		changeFilter();
-	}, [search,data,setSelectedCountry]);
+	}, [search,data,setSelectedCountry,setData]);
 	const handleChange = (e) => {
 		setSearch(e.target.value);
 	};
