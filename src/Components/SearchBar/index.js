@@ -25,6 +25,7 @@ function SearchBar({ setSelectedCountry, data, setData, contactData }) {
 	useEffect(() => {
 		fetchData();
 		changeFilter();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [search]);
 	const handleChange = (e) => {
 		setSearch(e.target.value);

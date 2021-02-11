@@ -14,7 +14,7 @@ function Home() {
 				</div>
 				<div className="col-12">
 					<div className="row ">
-						<div className="col-6 mx-auto">
+						<div className="col-12 col-md-6 mx-auto">
 							<h4 className="text-center">
 								<FormattedMessage id="home.dummyTextHeaderFirst" />
 							</h4>
@@ -26,7 +26,7 @@ function Home() {
 				</div>
 				<div className="col-12">
 					<div className="row">
-						<div className="col-6 mx-auto">
+						<div className="col-12 col-md-6 mx-auto">
 							<h4 className="text-center">
 								<FormattedMessage id="home.dummyTextHeaderSecond" />
 							</h4>
