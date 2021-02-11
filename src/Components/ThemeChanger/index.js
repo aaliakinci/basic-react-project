@@ -1,5 +1,4 @@
 import { useEffect, useContext, useState } from 'react';
-import styles from './styles.module.css';
 import ThemeContext from '../../Context/ThemeContext';
 import Switch from '../../../node_modules/@material-ui/core/Switch/Switch';
 function ThemeChanger() {

@@ -33,7 +33,7 @@ function ContactForm() {
 		const {name,email,phoneNumber,country,text} = data;
 		if(name.trim()!=="" && email.trim()!=="" && phoneNumber.trim()!=="" && selectedCountry.trim()!=="" && text.trim()!=="")
 		{
-			setData({...data,country:selectedCountry});	
+			setData({...data,[data.country]:selectedCountry});	
 			console.log(data);
 			return 0
 		}

@@ -1,7 +1,6 @@
 import { useEffect, useContext, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import CookieContext from '../../../Context/CookieContext';
-import Validation from '../../../Context/Validation';
 function UserDetailForm() {
 	const { callCookie, setCookie } = useContext(CookieContext);
 	const [error, setError] = useState('');

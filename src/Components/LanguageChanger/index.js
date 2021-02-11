@@ -1,7 +1,5 @@
 import { useContext } from 'react';
 import LanguageContext from '../../Context/LanguageContext';
-import turkey from './turkey.png';
-import united from './united-kingdom.png';
 function LanguageChanger() {
 	const { lang, setLang } = useContext(LanguageContext);
 	return (
