@@ -1,11 +1,14 @@
 import { useContext } from 'react';
 import LanguageContext from '../../Context/LanguageContext';
 function LanguageChanger() {
-	const { lang, setLang } = useContext(LanguageContext);
-	console.log(lang);
+	const { lang, setLang,localChange } = useContext(LanguageContext);
+	const handleChange = (e) => {
+		setLang(e.target.value)
+		localChange(e.target.value);
+	}
 	return (
 		<div>
-			<select className="form-control-sm" onChange={(e) => setLang(e.target.value)} defaultValue={lang}>
+			<select className="form-control-sm" onChange={handleChange} defaultValue={lang}>
 				<option value="tr-TR">
 					TR
 				</option>

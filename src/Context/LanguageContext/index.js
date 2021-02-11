@@ -1,14 +1,22 @@
 import { createContext, useState, useEffect } from 'react';
-import cookie from 'js-cookie';
+
 const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
-	const defaultLang = navigator.language;
-	const [lang, setLang] = useState(defaultLang);
-
+	const isLocal = localStorage.getItem('lang');
+	if (isLocal === undefined) {
+		const defaultlang = navigator.language;
+		localStorage.setItem('lang', defaultlang);
+	}
+	const locallang = localStorage.getItem('lang');
+	const [lang, setLang] = useState(locallang);
+	const localChange = (changeLang) => {
+		localStorage.setItem('lang', changeLang);
+	};
 	const values = {
 		lang,
 		setLang,
+		localChange,
 	};
 
 	return <LanguageContext.Provider value={values}>{children}</LanguageContext.Provider>;
