@@ -10,3 +10,7 @@
 
 ## Teknolojiler 
 - React 
+
+## Deploy 
+##### Netlify'a deploy edildi fakat ilk açıldığında sayfa gelmiyor bir reflesh atılması gerekiyor local'de böyle bir problem yoktu.
+### https://basicreactapp-aliakinci.netlify.app

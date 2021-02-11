@@ -2,7 +2,7 @@ export const language = {
 	'tr-TR': {
 		'header.brand': 'Kimim Ben ? ',
 		'header.contact': 'Bize Ulaş',
-		'header.home': 'AnaSayfa',
+		'header.home': 'Anasayfa',
 		'header.login': 'Giriş',
 		'header.profile': 'Profil',
 		'contact.name': 'Adınız',
