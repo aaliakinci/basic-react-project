@@ -4,6 +4,7 @@ import UserDetailForm from '../../Components/toolbox/UserDetailForm';
 import {FormattedMessage} from 'react-intl'
 function UserDetail() {
 	const { theme } = useContext(ThemeContext);
+	
 	return (
 		<div
 			className={`col-12 col-md-6 mx-auto my-4 ${

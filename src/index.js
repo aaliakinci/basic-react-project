@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { LanguageProvider } from './Context/LanguageContext';
 import { BrowserRouter } from 'react-router-dom';
 import { PageProvider } from './Context/PageContext';
-import { ValidationProvider } from './Context/Validation';
 ReactDOM.render(
 	<React.Fragment>
 		<BrowserRouter>
@@ -17,9 +16,7 @@ ReactDOM.render(
 				<ThemeProvider>
 					<LanguageProvider>
 						<PageProvider>
-							<ValidationProvider>
-								<App />
-							</ValidationProvider>
+							<App />
 						</PageProvider>
 					</LanguageProvider>
 				</ThemeProvider>

@@ -73,7 +73,8 @@ function Header() {
 							</Link>
 						</NavItem>
 						<NavItem>
-							<Button
+							{
+								isUser===0?<Button
 								className={`btn nav-link bg-transparent border-0 ${
 									theme === 'light' ? 'text-dark' : 'text-white'
 								}`}
@@ -81,7 +82,8 @@ function Header() {
 								onClick={toggleModal}
 							>
 								<FormattedMessage id="header.login" />
-							</Button>
+							</Button>:""
+							}
 						</NavItem>
 						{
 						isUser===1?<Profile/> : ""

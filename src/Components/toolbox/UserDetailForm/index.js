@@ -8,6 +8,9 @@ function UserDetailForm() {
 		name: '',
 		email: '',
 	});
+	const goToHome = () => {
+		window.location.href="/"
+	}
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setError('');
@@ -25,7 +28,9 @@ function UserDetailForm() {
 		setUser(user);
 	}, [callCookie]);
 	return (
-		<div>
+		<>
+		{
+			user !== undefined?<div>
 			<form className="w-100 p-4 border shadow" onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label htmlFor="name">
@@ -51,7 +56,10 @@ function UserDetailForm() {
 				</button>
 				<small className="text-danger lead">{error}</small>
 			</form>
-		</div>
+		</div>:goToHome()
+		}
+		</>
+		
 	);
 }
 

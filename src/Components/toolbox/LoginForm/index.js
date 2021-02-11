@@ -1,10 +1,8 @@
 import {useState,useContext} from 'react';
 import {FormattedMessage} from 'react-intl';
 import CookieContext from '../../../Context/CookieContext';
-import ValidationContext from '../../../Context/Validation';
 
 function LoginForm() {
-	const {validater} = useContext(ValidationContext)
 	const {setCookie} = useContext(CookieContext);
 	const [user,setUser] = useState({
 		name:"",
@@ -14,7 +12,6 @@ function LoginForm() {
 	const [error, setError] = useState("")
 	const handleSubmit = (e)=> {
 		e.preventDefault();
-		console.log('submitting...');
 		const trimPassword = user.password.replace(/\s+/g,'').length;
 		const password = user.password.length;
 	  if(trimPassword<password)
@@ -22,14 +19,16 @@ function LoginForm() {
 			setError(<FormattedMessage id="login.errorPasswordSpace" />)
 			return 0
 		}
-		const validate = validater(user);
-		if(validate===0)
+		if(user.name.replace(/\s+/g,'')==="" && user.password.replace(/\s+/g,'')==="")
 		{
 			setError(<FormattedMessage id="login.error"/>)
 			return 0
 		}
+		console.log('submitting...');
 		setCookie('UserBasicReact',user,20);
 		window.location.reload();
+		
+		
 	}
  const handleChange = (e) =>{
 	 setUser({...user,[e.target.name]:e.target.value})	
