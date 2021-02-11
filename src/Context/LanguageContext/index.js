@@ -1,15 +1,24 @@
-import { createContext, useState} from 'react';
+import { createContext, useState,useEffect} from 'react';
 
 const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
 	const isLocal = localStorage.getItem('lang');
-	if (isLocal === undefined) {
+	const defaultlang = navigator.language;
+	const [lang, setLang] = useState(defaultlang);
+
+useEffect(() => {
+	if (isLocal === null) {
 		const defaultlang = navigator.language;
 		localStorage.setItem('lang', defaultlang);
+		setLang(defaultlang);
+	}else{
+		const locallang = localStorage.getItem('lang');
+		setLang(locallang);
 	}
-	const locallang = localStorage.getItem('lang');
-	const [lang, setLang] = useState(locallang);
+}, [])
+	
+
 	const localChange = (changeLang) => {
 		localStorage.setItem('lang', changeLang);
 	};
