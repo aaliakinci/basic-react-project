@@ -25,7 +25,7 @@ function Header () {
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div>
-      <Navbar color={`${theme==="light"?"light":"dark"}`} className={`border border-left-0 border-right-0 border-top-0 `} light expand="md">
+      <Navbar color={`${theme==="light"?"light":"dark"}`} className={`border ${theme==="light"?"":"border-danger"} border-left-0 border-right-0 border-top-0 `} light expand="md">
 				<Link className={`navbar-brand ${theme==="light"?"text-dark":"text-white"}`} to="/"><FormattedMessage id="header.brand"/></Link>
 				<Link className={`navbar-brand ${theme==="light"?"text-dark":"text-white"}`} >Sayfa İsmi</Link>
         <NavbarToggler onClick={toggle} />

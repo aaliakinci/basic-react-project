@@ -1,0 +1,18 @@
+.light {
+	background-color: white;
+	min-height: 100vh;
+}
+.dark {
+	background-color: #0e141a;
+	min-height: 100vh;
+}
+input {
+	border: none !important;
+	border-bottom: 1px solid red !important;
+	background-color: transparent !important;
+}
+textarea{
+		border: none !important;
+		border-bottom: 1px solid red !important;
+		background-color: transparent !important; 
+}
