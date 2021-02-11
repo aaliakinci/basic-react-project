@@ -5,26 +5,27 @@ function SearchBar({ setSelectedCountry, data, setData, contactData }) {
 	const [search, setSearch] = useState('');
 	const [filterCountry, setFilterCountry] = useState([]);
 	const { theme } = useContext(ThemeContext);
-	useEffect(() => {
-		const fetchData = async () => {
-			setFilterCountry(
-				data.filter((country) => {
-					return country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
-				}),
-			);
-		};
-		fetchData();
-		const changeFilter = () => {
-			if (filterCountry.length > 0) {
-				if (filterCountry.length < 2 && search === filterCountry[0].name) {
-					setSelectedCountry(filterCountry[0].id);
-					setData({ ...contactData, country: filterCountry[0].id });
-					setFilterCountry([]);
-				}
+
+	const changeFilter = () => {
+		if (filterCountry.length > 0) {
+			if (filterCountry.length < 2 && search === filterCountry[0].name) {
+				setSelectedCountry(filterCountry[0].id);
+				setData({ ...contactData, country: filterCountry[0].id });
+				setFilterCountry([]);
 			}
 		}
+	}
+	const fetchData = async () => {
+		setFilterCountry(
+			data.filter((country) => {
+				return country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+			}),
+		);
+	};
+	useEffect(() => {
+		fetchData();
 		changeFilter();
-	}, [search,data,setSelectedCountry,setData]);
+	}, [search]);
 	const handleChange = (e) => {
 		setSearch(e.target.value);
 	};
